@@ -1,12 +1,12 @@
 // Copyright 2021 NNTU-CS
 #include "train.h"
-int Train::getOpCount()
-{
+Train::Train():first(nullptr), countOp(0) {}
+
+int Train::getOpCount() {
   return countOp;
 }
 
-int Train::getLength()
-{
+int Train::getLength() {
   int countLen = 0;
   int countStep = 0;
   Cage* item = first;
@@ -31,11 +31,9 @@ int Train::getLength()
       return countLen;
     }
   }
-
 }
 
-void Train::addCage(bool light)
-{
+void Train::addCage(bool light) {
   Cage* Item = new Cage;
   Item->light = light;
   Item->prev = nullptr;
